@@ -1,0 +1,18 @@
+<launch>
+  <!-- <group ns="correia_roger_turtlebot_assgn4"> -->
+    <!-- Gazebo -->
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+      <arg name="world_file" value="$(find minimal_launch)/world/lab.world" />
+    </include>
+    <!-- My Controller -->
+
+    <!-- AMCL Demo  -->
+    <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
+      <arg name="map_file" value="$(find minimal_launch)/map/.yaml" />
+    </include>
+    <!-- RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/view_navigation.rviz"/>
+  <!-- </group> -->
+  <!-- slam_gmapping node -->
+  <!-- <node pkg="gmapping" name="slam_gmapping" type="slam_gmapping"/> -->
+</launch>
