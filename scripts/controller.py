@@ -123,9 +123,9 @@ def init():
             time.sleep(0.5)
             continue
         if joystick_msg.buttons[0] == 1: # X pressed
-            linear = 0.3
+            linear = 0.1
         elif joystick_msg.buttons[2] == 1: # Triangle pressed
-            linear = -0.3
+            linear = -0.1
         if joystick_msg.axes[4] < 0:
             linear = 0.5 * -abs(joystick_msg.axes[4])
         elif joystick_msg.axes[4] > 0:
